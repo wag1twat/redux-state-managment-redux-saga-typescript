@@ -1,0 +1,60 @@
+import { TApiError } from '../../types'
+
+/* INITIAL STATE */
+export type TNotification = { index: number; notification: string }
+export type TNotificationsReducer = {
+  success: TNotification[]
+  errors: TNotification[]
+}
+/* ACTIONS */
+/* ACTIONS / STRING TYPES */
+export const ___INITIALIZE_NOTIFICATIONS__ = '___INITIALIZE_NOTIFICATIONS__'
+/* success */
+export const REQUEST_SUCCESS_NOTIFICATION = 'REQUEST_SUCCESS_NOTIFICATION'
+export const SET_SUCCESS_NOTIFICATION = 'SET_SUCCESS_NOTIFICATION'
+export const HIDE_SUCCESS_NOTIFICATION = 'HIDE_SUCCESS_NOTIFICATION'
+/* errors */
+export const REQUEST_ERROR_NOTIFICATION = 'REQUEST_ERROR_NOTIFICATION'
+export const SET_ERROR_NOTIFICATION = 'SET_ERROR_NOTIFICATION'
+export const HIDE_ERROR_NOTIFICATION = 'HIDE_ERROR_NOTIFICATION'
+/* ACTIONS TYPES */
+export type ___INITIALIZE_NOTIFICATIONS__ACTION = {
+  type: typeof ___INITIALIZE_NOTIFICATIONS__
+}
+/* success */
+export type SET_SUCCESS_NOTIFICATION_ACTION = {
+  type: typeof SET_SUCCESS_NOTIFICATION
+  payload: string
+  exp: number
+}
+export type HIDE_SUCCESS_NOTIFICATION_ACTION = {
+  type: typeof HIDE_SUCCESS_NOTIFICATION
+  index: number
+}
+export type REQUEST_SUCCESS_NOTIFICATION_ACTION = {
+  type: typeof REQUEST_SUCCESS_NOTIFICATION
+  payload: string
+}
+/* errors */
+export type SET_ERROR_NOTIFICATION_ACTION = {
+  type: typeof SET_ERROR_NOTIFICATION
+  payload: string
+  exp: number
+}
+export type HIDE_ERROR_NOTIFICATION_ACTION = {
+  type: typeof HIDE_ERROR_NOTIFICATION
+  index: number
+}
+export type REQUEST_ERROR_NOTIFICATION_ACTION = {
+  type: typeof REQUEST_ERROR_NOTIFICATION
+  payload: string
+}
+/*  */
+export type NOTIFICATIONS_ACTIONS =
+  | ___INITIALIZE_NOTIFICATIONS__ACTION
+  | SET_SUCCESS_NOTIFICATION_ACTION
+  | HIDE_SUCCESS_NOTIFICATION_ACTION
+  | REQUEST_SUCCESS_NOTIFICATION_ACTION
+  | SET_ERROR_NOTIFICATION_ACTION
+  | HIDE_ERROR_NOTIFICATION_ACTION
+  | REQUEST_ERROR_NOTIFICATION_ACTION
